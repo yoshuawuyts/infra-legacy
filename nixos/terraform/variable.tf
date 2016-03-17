@@ -1,3 +1,6 @@
+variable "infra_name" {
+  description = "name of your infrastructure"
+}
 variable "aws_access_key" {
   description = "AWS access key"
 }
@@ -25,13 +28,10 @@ variable "aws_instance_type" {
   default = "t2.nano"
 }
 
-# Ubuntu Precise 12.04 LTS (x64)
+# NixOS "15.09".<region>.hvm-ebs
+# https://github.com/NixOS/nixops/blob/master/nix/ec2-amis.nix
 variable "aws_amis" {
   default = {
-    eu-west-1 = "ami-b1cf19c6"
-    us-east-1 = "ami-de7ab6b6"
-    us-west-1 = "ami-3f75767a"
-    us-west-2 = "ami-21f78e11"
-    ap-southeast-2 = "ami-6c14310f"
+    ap-southeast-2 = "ami-996c4cfa"
   }
 }
